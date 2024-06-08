@@ -12,17 +12,23 @@ public class QuoteController {
     @Autowired
     private QuoteService quoteService;
 
+    //Adding Quote
+
     @PostMapping("addQuote")
     public ResponseEntity addQuote(@RequestBody QuoteModel quoteModel){
         QuoteModel result = quoteService.addQuote(quoteModel);
         return new ResponseEntity<>(result, HttpStatus.OK);
     }
 
+    //Updating Quote
+
     @PutMapping("updateQuote")
     public ResponseEntity updateQuote(@RequestParam int quoteId, @RequestParam String text){
         QuoteModel quoteModel = quoteService.updateQuote(quoteId,text);
         return new ResponseEntity(quoteModel,HttpStatus.OK);
     }
+
+    //Delete Quote
 
     @DeleteMapping("deleteQuote")
     public String deleteQuote(@RequestParam int quoteId){
@@ -40,7 +46,6 @@ public class QuoteController {
     public QuoteModel getQuoteByAuthorName(@RequestParam String author){
         QuoteModel quoteModel = quoteService.getQuoteByAuthorName(author);
         return quoteModel;
-
     }
 
 
