@@ -4,9 +4,7 @@ import com.exam.RandonQuote.Models.QuoteModel;
 import com.exam.RandonQuote.Repositories.QuoteRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-import java.util.Optional;
 import java.util.Random;
 
 @Service
